@@ -7,7 +7,7 @@ import "./ISDKTransferRouter.sol";
 
 contract BKCSDKExample2 {
     address public constant SDK_CALL_HELPER_ROUTER = 0x96f4C25E4fEB02c8BCbAdb80d0088E0112F728Bc;
-    ISDKTransferRouter public SDK_TRANSFER_ROUTER = ISDKTransferRouter(0x4Bf8a52cC1AE2F17F56b274adaF76B4A648eD155);
+    ISDKTransferRouter public constant SDK_TRANSFER_ROUTER = ISDKTransferRouter(0x4Bf8a52cC1AE2F17F56b274adaF76B4A648eD155);
 
     uint256 public myUint256Var = 7216;
     string[] public myStringArrVar; // appendable array
