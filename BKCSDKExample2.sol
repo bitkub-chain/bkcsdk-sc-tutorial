@@ -3,9 +3,11 @@
 pragma solidity >=0.8.0 <0.8.20;
 
 import "./ITarget.sol";
+import "./ISDKTransferRouter.sol";
 
 contract BKCSDKExample2 {
     address public constant SDK_CALL_HELPER_ROUTER = 0x96f4C25E4fEB02c8BCbAdb80d0088E0112F728Bc;
+    ISDKTransferRouter public SDK_TRANSFER_ROUTER = ISDKTransferRouter(0x4Bf8a52cC1AE2F17F56b274adaF76B4A648eD155);
 
     uint256 public myUint256Var = 7216;
     string[] public myStringArrVar; // appendable array
@@ -66,5 +68,14 @@ contract BKCSDKExample2 {
 
     function mySDKMethod3(address target_, uint256 a_, address) external onlySDKCallHelperRouter returns (uint256) {
         return ITarget(target_).setA(a_);
+    }
+
+    function mySDKMethod4(
+        address tokenAddr_,
+        address recipient_,
+        uint256 amount_,
+        address bitkubNext_
+    ) external onlySDKCallHelperRouter {
+        SDK_TRANSFER_ROUTER.transferKAP20(tokenAddr_, recipient_, amount_, bitkubNext_);
     }
 }
