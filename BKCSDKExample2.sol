@@ -78,4 +78,13 @@ contract BKCSDKExample2 {
     ) external onlySDKCallHelperRouter {
         SDK_TRANSFER_ROUTER.transferKAP20(tokenAddr_, recipient_, amount_, bitkubNext_);
     }
+
+    function mySDKMethod5(
+        address tokenAddr_,
+        address recipient_,
+        uint256 tokenId_,
+        address bitkubNext_
+    ) external onlySDKCallHelperRouter {
+        SDK_TRANSFER_ROUTER.transferKAP721(tokenAddr_, recipient_, tokenId_, bitkubNext_);
+    }
 }

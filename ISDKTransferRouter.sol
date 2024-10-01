@@ -9,4 +9,11 @@ interface ISDKTransferRouter {
         uint256 amount_,
         address bitkubNext_
     ) external;
+
+    function transferKAP721(
+        address tokenAddr_,
+        address recipient_,
+        uint256 tokenId_,
+        address bitkubNext_
+    ) external;
 }
